@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Tarek's Cozy Quarters
+        </title>
+    </head>
+    <body>
+        <h1 style="text-align: center;">
+            About
+        </h1>
+    <p style="text-align: center;">
+        I'm an French-Egyptian student at ASB who is typing html stuff on my screen for you to look at and maybe even read. Fun fact about this site, there is a hidden meme in each page, it's invisible so you have to click around, if I rememeber to add it you'll find it eventually.
+    </p>
+
+    <!-- container holding invisible button and the hidden image -->
+    <div id="secret-container" style="width:300px;height:300px;margin:2rem auto;position:relative;">
+        <!-- invisible button covers the entire container -->
+        <button id="secret-btn" onclick="reveal()" style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;cursor:pointer;border:none;background:none;">
+            <!-- no visible content -->
+        </button>
+        <!-- image starts hidden and will replace the button when revealed -->
+        <!-- replace "meme.png" with the filename you put in the static/ folder -->
+        <img id="secret-img" src="{{ url_for('static', filename='Absolute Unemployment.gif') }}" alt="Hidden Meme" style="display:none;width:100%;height:100%;" />
+    </div>
+
+    <script>
+        function reveal() {
+            document.getElementById('secret-btn').style.display = 'none';
+            document.getElementById('secret-img').style.display = 'block';
+        }
+    </script>
+</html>
